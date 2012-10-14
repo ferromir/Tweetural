@@ -1,6 +1,7 @@
 require 'yaml'
 require 'stemmer'
 require 'classifier'
+require 'sinatra'
 
 # Load previous classifications
 funny       = YAML::load_file('funny.yml')
@@ -24,3 +25,7 @@ puts classifier.classify "Meg: You could kill all the girls who are prettier tha
 
 # Print the classifier itself
 p classifier
+
+get '/:text' do
+  classifier.classify params[:text]
+end

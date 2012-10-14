@@ -1,7 +1,7 @@
 require 'mongo'
 require 'uri'
 require 'json'
-require 'yaml'
+equire 'yaml'
 require 'stemmer'
 require 'classifier'
 
@@ -15,5 +15,3 @@ def get_connection
 end
 
 db = get_connection
-
-

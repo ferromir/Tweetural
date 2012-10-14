@@ -1,6 +1,7 @@
-require 'rubygems'
+require 'yaml'
 require 'stemmer'
 require 'classifier'
+require 'sinatra'
 
 # Load previous classifications
 funny       = YAML::load_file('funny.yml')
