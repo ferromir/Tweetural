@@ -3,6 +3,8 @@ require 'stemmer'
 require 'classifier'
 require 'sinatra'
 
+enable :sessions
+
 def initialize_classifiers
   training = YAML::load_file('training.yml')
   classifiers = Hash.new
@@ -19,8 +21,6 @@ def initialize_classifiers
 end
 
 get '/analyze/:culture/:text' do
-  @classifiers = initialize_classifiers
-  @classification = @classifiers[params[:culture]]
-  result = (@classification.classifications params[:text]).inspect
-  result += " " + (@classification.classify params[:text]).inspect
+  session[:classifiers] ||= initialize_classifiers
+  (session[:classifiers][params[:culture]].classifications params[:text]).inspect
 end
