@@ -1,5 +1,5 @@
 # command to run this script in OSX:
-# $ export MONGOHQ_URL=mongodb://dummy:dummy@alex.mongohq.com:10044/Tweetural;ruby apitest.rb
+# $ export MONGODB_URL=mongodb://dummy:dummy@alex.mongohq.com:10044/Tweetural;ruby apitest.rb
 
 require 'rest-client'
 require 'sinatra'
@@ -10,7 +10,7 @@ require 'ruby-debug'
 
 def get_connection
 	return @db_connection if @db_connection
-	db = URI.parse(ENV['MONGOHQ_URL'])
+	db = URI.parse(ENV['MONGODB_URL'])
 	db_name = db.path.gsub(/^\//, '')
 	@db_connection = Mongo::Connection.new(db.host, db.port).db(db_name)
 	@db_connection.authenticate(db.user, db.password) unless (db.user.nil? || db.password.nil?)

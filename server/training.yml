@@ -1,8 +1,8 @@
 cultures:
   - name: "global"
     categories:
-      - name: "positive"
-        training:
+      - name: "like"
+        phrases:
           - "I like"
           - "we like"
           - "seems good"
@@ -25,8 +25,8 @@ cultures:
           - "glorious"
           - "I really like it"
           - "I love"
-      - name: "negative"
-        training:
+      - name: "dislike"
+        phrases:
           - "I dislike"
           - "I don't like"
           - "I dont like"
@@ -51,8 +51,8 @@ cultures:
           - "I hate"
   - name: "panama"
     categories:
-      - name: "me_gusta"
-        training:
+      - name: "me gusta"
+        phrases:
           - "me gusta"
           - "nos gusta"
           - "me parece bien"
@@ -76,8 +76,8 @@ cultures:
           - "la botaron con"
           - "esta del carajo"
           - "ta del carajo"
-      - name: "no_me_gusta"
-        training:
+      - name: "no me gusta"
+        phrases:
           - "no me gusta"
           - "no nos gusta"
           - "no me parece bien"
@@ -108,7 +108,7 @@ cultures:
           - "me cabrea"
           - "vale cebo"
       - name: "ofensivo"
-        training:
+        phrases:
           - "vale verga"
           - "esa vaina vale verga"
           - "no vale ni verga"
