@@ -15,7 +15,7 @@ end
 
 def save_tweets(new_tweets)
   feed_tweets = get_database_from_uri.collection('feed_tweets')
-  new_tweets.each { |t| feed_tweets.insert(t) }
+  new_tweets.each { |t| puts feed_tweets.insert(t) }
 end
 
 def search(text)

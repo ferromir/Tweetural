@@ -15,8 +15,8 @@ def save_training_phrases
   cultures = get_database_from_uri.collection('cultures')
   cultures.remove()
 
-  training_data = YAML::load_file('training.yml')
-  training_data['cultures'].each { |c| cultures.insert(c) }
+  training_data = YAML::load_file('trainer.yml')
+  training_data['cultures'].each { |c| puts cultures.insert(c) }
 end
 
 save_training_phrases
